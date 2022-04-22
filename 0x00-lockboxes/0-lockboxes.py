@@ -13,6 +13,8 @@ class Box:
 def setOpened(listOfBoxes, currentBox):
     """Open the boxes of the list depending of the given keys"""
     for key in currentBox.keys:
+        if key >= len(listOfBoxes):
+            continue
         if listOfBoxes[key].opened is False:
             listOfBoxes[key].opened = True
             listOfBoxes = setOpened(listOfBoxes, listOfBoxes[key])
